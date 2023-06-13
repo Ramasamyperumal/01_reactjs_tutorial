@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Phamelo';
+  src: url('../public/fonts/Phamelo.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  max-width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.titleText {
+  font-family: 'Phamelo';
+}
+.row1 {
+  background-color: rgba(128, 128, 128, 0.425);
+}
+.row1section1, .row1section2, .row2section1, .row3section1 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+}
+.row1section2 {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.row3 {
+  background-color: gray;
+  padding: 10px;
+}
+.row1section2 div {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+.row1section1 > div, .row3section1 > div {
+  width: 50%;
+}
+.row2section1 > div {
+  width: 33.3333333%;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.row3section1 > div:first-child {
+  background-color: white;
+}
+.row3section1 > div:last-child {
+  background-color: rgb(69, 68, 68);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.row1section1 > div:last-child {
+  text-align: right;
+}
+.logo {
+  width: 25%;
+  border-radius: 50%;
+}
+.row2 h3, .row3 h3 {
+  text-align: center;
+}
+.row4 {
+  background-color: gainsboro;
+  text-align: center;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+/* *{
+  font-family: Arial;
+  
 }
+code{
+   color:darkmagenta;
+   font-weight: bold;
+   font-size: 50px;
+}
+code1{
+   color:darkmagenta;
+   font-weight: bold;
+   cursor: pointer;
+}
+.title{
+   width:50%;
+   float:left;
+
+}
+#small{
+   position:relative;
+   bottom:20;
+}
+.menus::after{
+   display: table;
+   content:"";
+   padding-top: 10px;
+}
+.menus a {
+   margin-top: 20px;
+   padding:2%;
+   text-decoration: none;  
+   color:black;
+   font-weight: bold;
+   width:50%;
+}
+a{text-decoration: none;}
+.menus a:hover{
+   background-color: darkmagenta;
+   color:white;
+}
+.red{
+   background-color:darkmagenta;
+}
+.menu{
+   padding-left: 50px;
+   margin-top: 0;
+   color:black;
+   background-color: white;
+   height:150px;
+   width:100%;
+}
+.gridimages{
+   margin-top: 50px;
+   padding-left:50px;
+   width:100%;
+}
+.welcome{
+   padding-left:80px;
+   margin-top:80px;
+}
+.serv{
+   color:white;
+   background-color:darkmagenta;
+   font-style: italic;
+   border: 2px solid darkmagenta;
+}
+.Services{
+   padding-left: 80px;
+   font-weight: bold;
+}
+#p1{
+   width:200px;
+   height:200px;
+   border:2px solid white;  
+} 
+#p2{
+   width:200px;
+   height:200px;
+   border:2px solid white;  
+}
+#p3{
+   width:200px;
+   height:200px;
+   border:2px solid white;  
+}
+.footer{
+   width:100%;
+   padding-left:60px;
+
+}
+
+
+
+.fa {
+font-size: 30px;
+width: 30px;
+border-radius: 20%;
+text-align: center;
+margin-left: 150px;
+
+}
+.fa:hover {
+opacity: 0.7;
+}
+
+.fa-facebook {
+background:darkmagenta;
+color: white;
+}
+.fa-youtube {
+background:darkmagenta;
+color: white;
+}
+.fa-instagram {
+background:darkmagenta;
+color: white;
+}
+.fa-pinterest {
+background:darkmagenta;
+color: white;
+} */
