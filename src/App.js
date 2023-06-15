@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import ClassCycle from './ClassCycle';
 import AboutComp from './Components/AboutComp';
 import FooterComp from './Components/FooterComp';
 import HeaderComp from './Components/HeaderComp';
@@ -81,20 +82,21 @@ import { useState } from 'react';
 //   );
 // }
 
-function App() {
-    return (
-        <div>
-            <h1>ReactJs Project</h1>
-            {/* <HeaderComp /> */}
-            <HeaderCompCls />
-            <ProjectComp />
-            <AboutComp />
-            <FooterComp />
-        </div>
-    );
-}
+// function App() {
+//     return (
+//         <div>
+//             <h1>ReactJs Project</h1>
+//             <h3>Modified for GitHub</h3>
+//             {/* <HeaderComp /> */}
+//             <HeaderCompCls />
+//             <ProjectComp />
+//             <AboutComp />
+//             <FooterComp />
+//         </div>
+//     );
+// }
 
-export default App;
+// export default App;
 
 
 
@@ -326,3 +328,16 @@ export default App;
 // }
 
 // export default App;
+
+
+function App() {
+
+    const [login, setLogin] = useState(false);
+    return (
+        <>
+            <ClassCycle login={login} />
+        </>
+    )
+}
+
+export default App;
