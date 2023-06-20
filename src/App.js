@@ -6,7 +6,14 @@ import FooterComp from './Components/FooterComp';
 import HeaderComp from './Components/HeaderComp';
 import HeaderCompCls from './Components/HeaderCompCls';
 import ProjectComp from './Components/ProjectComp';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
+import FuncHooks from './FuncHooks';
+import FuncComp1 from './FuncComp1';
+import FuncComp2 from './FuncComp2';
+import FuncComp3 from './FuncComp3';
+import FuncComp4 from './FuncComp4';
+import FuncFoms from './FuncForms';
+import FuncAPI from './FuncAPI';
 
 // function App() {
 //   let output = 'This is a JS Code';
@@ -329,15 +336,29 @@ import { useState } from 'react';
 
 // export default App;
 
+const LoginContext = createContext();
 
 function App() {
 
-    const [login, setLogin] = useState(false);
+    // const [login, setLogin] = useState(false);
     return (
         <>
-            <ClassCycle login={login} />
+            {/* <ClassCycle login={login} /> */}
+            {/* <FuncHooks login={login} /> */}
+
+            {/* <LoginContext.Provider value={login}>
+                <FuncComp1 />
+                <FuncComp2 />
+                <FuncComp3 />
+                <FuncComp4 />
+            </LoginContext.Provider> */}
+
+            {/* <FuncFoms /> */}
+
+            <FuncAPI />
         </>
     )
 }
 
 export default App;
+export { LoginContext };
