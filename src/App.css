@@ -1,4 +1,29 @@
-@font-face {
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.part30 {
+  width: 30%;
+}
+.part70 {
+  width: 70%;
+}
+.flex a {
+  color: green;
+  text-decoration: none;
+}
+.flex a.active {
+  color: red;
+}
+
+/* @font-face {
   font-family: 'Phamelo';
   src: url('../public/fonts/Phamelo.ttf');
 }
@@ -60,7 +85,7 @@ img {
   background-color: gainsboro;
   text-align: center;
   padding: 10px;
-}
+} */
 
 
 

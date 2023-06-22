@@ -1,19 +1,29 @@
 // import logo from './logo.svg';
 import './App.css';
-import ClassCycle from './ClassCycle';
-import AboutComp from './Components/AboutComp';
-import FooterComp from './Components/FooterComp';
-import HeaderComp from './Components/HeaderComp';
-import HeaderCompCls from './Components/HeaderCompCls';
-import ProjectComp from './Components/ProjectComp';
-import { useState, createContext } from 'react';
-import FuncHooks from './FuncHooks';
-import FuncComp1 from './FuncComp1';
-import FuncComp2 from './FuncComp2';
-import FuncComp3 from './FuncComp3';
-import FuncComp4 from './FuncComp4';
-import FuncFoms from './FuncForms';
-import FuncAPI from './FuncAPI';
+// import ClassCycle from './ClassCycle';
+// import AboutComp from './Components/AboutComp';
+// import FooterComp from './Components/FooterComp';
+// import HeaderComp from './Components/HeaderComp';
+// import HeaderCompCls from './Components/HeaderCompCls';
+// import ProjectComp from './Components/ProjectComp';
+// import { useState, createContext } from 'react';
+// import FuncHooks from './FuncHooks';
+// import FuncComp1 from './FuncComp1';
+// import FuncComp2 from './FuncComp2';
+// import FuncComp3 from './FuncComp3';
+// import FuncComp4 from './FuncComp4';
+// import FuncFoms from './FuncForms';
+// import FuncAPI from './FuncAPI';
+// import LayoutPage from './Pages/LayoutPage';
+
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import AboutPage from './Pages/AboutPage';
+import ContactPage from './Pages/ContactPage';
+import BlogPage from './Pages/BlogPage';
+import PortfolioPage from './Pages/PortfolioPage';
+import LayoutPage from './Pages/LayoutPage';
+import { useEffect, useState } from 'react';
 
 // function App() {
 //   let output = 'This is a JS Code';
@@ -336,29 +346,76 @@ import FuncAPI from './FuncAPI';
 
 // export default App;
 
-const LoginContext = createContext();
+// const LoginContext = createContext();
+
+// function App() {
+
+//     // const [login, setLogin] = useState(false);
+//     return (
+//         <>
+//             {/* <ClassCycle login={login} /> */}
+//             {/* <FuncHooks login={login} /> */}
+
+//             {/* <LoginContext.Provider value={login}>
+//                 <FuncComp1 />
+//                 <FuncComp2 />
+//                 <FuncComp3 />
+//                 <FuncComp4 />
+//             </LoginContext.Provider> */}
+
+//             {/* <FuncFoms /> */}
+
+//             <FuncAPI />
+//         </>
+//     )
+// }
 
 function App() {
+    const [login, setLogin] = useState(false);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    // const [login, setLogin] = useState(false);
+    const handleLogin = () => {
+        if(username === "Dinesh" && password === "Dinesh") {
+            setLogin(true);
+            sessionStorage.setItem("username", username);
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+
+    useEffect(() => {
+        if(sessionStorage.getItem("username")) {
+            setLogin(true);
+        }
+    }, [username])
+
     return (
         <>
-            {/* <ClassCycle login={login} /> */}
-            {/* <FuncHooks login={login} /> */}
-
-            {/* <LoginContext.Provider value={login}>
-                <FuncComp1 />
-                <FuncComp2 />
-                <FuncComp3 />
-                <FuncComp4 />
-            </LoginContext.Provider> */}
-
-            {/* <FuncFoms /> */}
-
-            <FuncAPI />
+            {
+                login
+                ?
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path='/' element={<LayoutPage />}>
+                                <Route index element={<HomePage />}></Route>
+                                <Route path='/about' element={<AboutPage />}></Route>
+                                <Route path='/contact' element={<ContactPage />}></Route>
+                                <Route path='/blog' element={<BlogPage />}></Route>
+                                <Route path='/portfolio' element={<PortfolioPage />}></Route>
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                :
+                    <>
+                        <input type='text' placeholder='Username:' onChange={(e) => setUsername(e.target.value)} /><br />
+                        <input type='password' placeholder='Password:' onChange={(e) => setPassword(e.target.value)} /><br />
+                        <button onClick={handleLogin}>Login</button>
+                    </>
+            }
         </>
     )
 }
 
 export default App;
-export { LoginContext };
+// export { LoginContext };
